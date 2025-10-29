@@ -6,6 +6,12 @@ page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, "html.parser")
 
+# Get location
+location = soup.find("span", class_="smallTxt")
+text = location.get_text().replace("Lon:", " Lon:").replace("Elev:", " Elev:")
+
+print("Location:", text.strip())
+
 # Get current conditions
 current_f = soup.find("p", class_="myforecast-current-lrg")
 current_c = soup.find("p", class_="myforecast-current-sm")
