@@ -32,12 +32,13 @@ get_weather(lat=41.8781, lon=-87.6298)
 Example Output
 ```
 Location:
-  40.77°N 73.96°W 
-  (Elev. 154 ft)
+  Lat: 40.77°N 
+  Lon: 73.96°W 
+  Elev: 154 ft.
 
 Current Weather:
-  56°F / 13°C
-  Fog/Mist
+  Temperature: 56°F / 13°C
+  Conditions: Fog/Mist
 ```  
 ## How It Works
 - Constructs URL with latitude/longitude coordinates
