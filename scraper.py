@@ -7,10 +7,10 @@ RESET = "\033[0m"
 
 
 def get_weather(lat=40.7678, lon=-73.9645):
-    URL = "https://forecast.weather.gov/MapClick.php?lat={lat}&lon={lon}"
+    URL = f"https://forecast.weather.gov/MapClick.php?lat={lat}&lon={lon}"
 
     try:
-        page = requests.get(URL)
+        page = requests.get(URL, timeout=10)
         page.raise_for_status()
 
         soup = BeautifulSoup(page.content, "html.parser")
@@ -43,3 +43,7 @@ def get_weather(lat=40.7678, lon=-73.9645):
         print("Could not connect to weather.gov")
     except requests.RequestException as e:
         print(f"Network error: {e}")
+
+
+if __name__ == "__main__":
+    get_weather()
